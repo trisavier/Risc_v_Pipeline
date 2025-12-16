@@ -1,0 +1,1065 @@
+TimeQuest Timing Analyzer report for PROCESSOR_PIPELINE
+Tue Dec 16 09:42:27 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clock'
+ 12. Slow Model Hold: 'clock'
+ 13. Slow Model Minimum Pulse Width: 'clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clock'
+ 24. Fast Model Hold: 'clock'
+ 25. Fast Model Minimum Pulse Width: 'clock'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; PROCESSOR_PIPELINE                                                ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 72.64 MHz ; 72.64 MHz       ; clock      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clock ; -12.767 ; -5247.279     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.380 ; -1192.380             ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                                                                                                                                         ;
++---------+----------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                                            ; To Node                                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -12.767 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.790     ;
+; -12.666 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.688     ;
+; -12.666 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.689     ;
+; -12.592 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.615     ;
+; -12.476 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.498     ;
+; -12.462 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.485     ;
+; -12.449 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.472     ;
+; -12.391 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.414     ;
+; -12.382 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.404     ;
+; -12.307 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.330     ;
+; -12.300 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.322     ;
+; -12.281 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.015     ; 13.302     ;
+; -12.281 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.303     ;
+; -12.228 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 13.254     ;
+; -12.207 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.229     ;
+; -12.179 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[3]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.202     ;
+; -12.178 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[3]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.201     ;
+; -12.159 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 13.178     ;
+; -12.127 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.011     ; 13.152     ;
+; -12.127 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 13.153     ;
+; -12.099 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.012     ; 13.123     ;
+; -12.091 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.015     ; 13.112     ;
+; -12.081 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.104     ;
+; -12.077 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.099     ;
+; -12.064 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.086     ;
+; -12.058 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.018     ; 13.076     ;
+; -12.058 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 13.077     ;
+; -12.053 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 13.079     ;
+; -12.044 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[4]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.067     ;
+; -12.031 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.012     ; 13.055     ;
+; -12.006 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 13.028     ;
+; -11.998 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.013     ; 13.021     ;
+; -11.998 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.012     ; 13.022     ;
+; -11.984 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 13.003     ;
+; -11.977 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.004     ; 13.009     ;
+; -11.942 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.968     ;
+; -11.937 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.011     ; 12.962     ;
+; -11.930 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.953     ;
+; -11.930 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.954     ;
+; -11.924 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.948     ;
+; -11.923 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.949     ;
+; -11.922 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 12.944     ;
+; -11.915 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.015     ; 12.936     ;
+; -11.910 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.936     ;
+; -11.887 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[2]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.910     ;
+; -11.876 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.005     ; 12.907     ;
+; -11.876 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.908     ;
+; -11.868 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.886     ;
+; -11.856 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.880     ;
+; -11.854 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 12.873     ;
+; -11.852 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.878     ;
+; -11.841 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 12.860     ;
+; -11.841 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.011     ; 12.866     ;
+; -11.841 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.867     ;
+; -11.808 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.831     ;
+; -11.802 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.834     ;
+; -11.794 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[3]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 12.816     ;
+; -11.794 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.818     ;
+; -11.793 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[3]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 12.815     ;
+; -11.783 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 12.802     ;
+; -11.781 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.805     ;
+; -11.768 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.794     ;
+; -11.767 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.793     ;
+; -11.764 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.796     ;
+; -11.761 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.011     ; 12.786     ;
+; -11.740 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.763     ;
+; -11.726 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.750     ;
+; -11.723 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.747     ;
+; -11.722 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.746     ;
+; -11.713 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.737     ;
+; -11.699 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 12.718     ;
+; -11.696 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 12.718     ;
+; -11.692 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.018     ; 12.710     ;
+; -11.686 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.005     ; 12.717     ;
+; -11.679 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_regwrite  ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.702     ;
+; -11.672 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.704     ;
+; -11.663 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.005     ; 12.694     ;
+; -11.663 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.695     ;
+; -11.659 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[4]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.014     ; 12.681     ;
+; -11.659 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.691     ;
+; -11.655 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.679     ;
+; -11.651 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.011     ; 12.676     ;
+; -11.640 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[3]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.666     ;
+; -11.639 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.663     ;
+; -11.639 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[3]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.665     ;
+; -11.637 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.663     ;
+; -11.632 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.655     ;
+; -11.624 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.650     ;
+; -11.621 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.644     ;
+; -11.621 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.645     ;
+; -11.601 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.633     ;
+; -11.589 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.621     ;
+; -11.571 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[3]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 12.590     ;
+; -11.571 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.595     ;
+; -11.570 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[3]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.017     ; 12.589     ;
+; -11.566 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.592     ;
+; -11.564 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.013     ; 12.587     ;
+; -11.547 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; clock        ; clock       ; 1.000        ; -0.012     ; 12.571     ;
+; -11.542 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 12.568     ;
+; -11.517 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ; clock        ; clock       ; 1.000        ; -0.004     ; 12.549     ;
++---------+----------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                                                                                                                                             ;
++-------+----------------------------------------------------------------------------+---------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                  ; To Node                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------+---------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; IFU_PIPELINE:ifu_module|if_pc[2]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.527 ; IFU_PIPELINE:ifu_module|if_pc[31]                                          ; IFU_PIPELINE:ifu_module|if_pc[31]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.793      ;
+; 0.594 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[8]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.860      ;
+; 0.595 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[25]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.861      ;
+; 0.595 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[14]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.861      ;
+; 0.595 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[11]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.861      ;
+; 0.598 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[12]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.864      ;
+; 0.601 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[30]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.867      ;
+; 0.603 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[16]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.869      ;
+; 0.603 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[19]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.869      ;
+; 0.604 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[9]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.870      ;
+; 0.605 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[18]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.871      ;
+; 0.606 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[7]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.872      ;
+; 0.606 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[10]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.872      ;
+; 0.672 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[7]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[7]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.938      ;
+; 0.675 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[13] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[13] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.941      ;
+; 0.677 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[23] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[23] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.943      ;
+; 0.677 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[5]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.943      ;
+; 0.680 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[8]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[8]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.946      ;
+; 0.681 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[31] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.947      ;
+; 0.682 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[22] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.948      ;
+; 0.682 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[4]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.948      ;
+; 0.687 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[0]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[0]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.953      ;
+; 0.688 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[24] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.954      ;
+; 0.698 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[11]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[4]            ; clock        ; clock       ; 0.000        ; 0.001      ; 0.965      ;
+; 0.702 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[7]    ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[0]            ; clock        ; clock       ; 0.000        ; 0.001      ; 0.969      ;
+; 0.703 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[29]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[27][29]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.969      ;
+; 0.704 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[9]    ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[2]            ; clock        ; clock       ; 0.000        ; 0.001      ; 0.971      ;
+; 0.797 ; IFU_PIPELINE:ifu_module|if_pc[17]                                          ; IFU_PIPELINE:ifu_module|if_pc[17]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.063      ;
+; 0.802 ; IFU_PIPELINE:ifu_module|if_pc[30]                                          ; IFU_PIPELINE:ifu_module|if_pc[30]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.068      ;
+; 0.805 ; IFU_PIPELINE:ifu_module|if_pc[10]                                          ; IFU_PIPELINE:ifu_module|if_pc[10]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; IFU_PIPELINE:ifu_module|if_pc[12]                                          ; IFU_PIPELINE:ifu_module|if_pc[12]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; IFU_PIPELINE:ifu_module|if_pc[18]                                          ; IFU_PIPELINE:ifu_module|if_pc[18]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; IFU_PIPELINE:ifu_module|if_pc[3]                                           ; IFU_PIPELINE:ifu_module|if_pc[3]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; IFU_PIPELINE:ifu_module|if_pc[5]                                           ; IFU_PIPELINE:ifu_module|if_pc[5]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; IFU_PIPELINE:ifu_module|if_pc[8]                                           ; IFU_PIPELINE:ifu_module|if_pc[8]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; IFU_PIPELINE:ifu_module|if_pc[19]                                          ; IFU_PIPELINE:ifu_module|if_pc[19]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.810 ; IFU_PIPELINE:ifu_module|if_pc[14]                                          ; IFU_PIPELINE:ifu_module|if_pc[14]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; IFU_PIPELINE:ifu_module|if_pc[15]                                          ; IFU_PIPELINE:ifu_module|if_pc[15]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; IFU_PIPELINE:ifu_module|if_pc[21]                                          ; IFU_PIPELINE:ifu_module|if_pc[21]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; IFU_PIPELINE:ifu_module|if_pc[24]                                          ; IFU_PIPELINE:ifu_module|if_pc[24]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; IFU_PIPELINE:ifu_module|if_pc[26]                                          ; IFU_PIPELINE:ifu_module|if_pc[26]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; IFU_PIPELINE:ifu_module|if_pc[28]                                          ; IFU_PIPELINE:ifu_module|if_pc[28]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
+; 0.814 ; IFU_PIPELINE:ifu_module|if_pc[16]                                          ; IFU_PIPELINE:ifu_module|if_pc[16]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.080      ;
+; 0.834 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[10]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[3]            ; clock        ; clock       ; 0.000        ; 0.001      ; 1.101      ;
+; 0.838 ; IFU_PIPELINE:ifu_module|if_pc[4]                                           ; IFU_PIPELINE:ifu_module|if_pc[4]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; IFU_PIPELINE:ifu_module|if_pc[20]                                          ; IFU_PIPELINE:ifu_module|if_pc[20]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; IFU_PIPELINE:ifu_module|if_pc[25]                                          ; IFU_PIPELINE:ifu_module|if_pc[25]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; IFU_PIPELINE:ifu_module|if_pc[27]                                          ; IFU_PIPELINE:ifu_module|if_pc[27]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; IFU_PIPELINE:ifu_module|if_pc[29]                                          ; IFU_PIPELINE:ifu_module|if_pc[29]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839 ; IFU_PIPELINE:ifu_module|if_pc[6]                                           ; IFU_PIPELINE:ifu_module|if_pc[6]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; IFU_PIPELINE:ifu_module|if_pc[7]                                           ; IFU_PIPELINE:ifu_module|if_pc[7]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.105      ;
+; 0.842 ; IFU_PIPELINE:ifu_module|if_pc[22]                                          ; IFU_PIPELINE:ifu_module|if_pc[22]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.108      ;
+; 0.843 ; IFU_PIPELINE:ifu_module|if_pc[9]                                           ; IFU_PIPELINE:ifu_module|if_pc[9]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.109      ;
+; 0.843 ; IFU_PIPELINE:ifu_module|if_pc[23]                                          ; IFU_PIPELINE:ifu_module|if_pc[23]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.109      ;
+; 0.845 ; IFU_PIPELINE:ifu_module|if_pc[11]                                          ; IFU_PIPELINE:ifu_module|if_pc[11]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.111      ;
+; 0.845 ; IFU_PIPELINE:ifu_module|if_pc[13]                                          ; IFU_PIPELINE:ifu_module|if_pc[13]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.111      ;
+; 0.849 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[9]  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.115      ;
+; 0.860 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[21] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[21] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.126      ;
+; 0.869 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[30] ; clock        ; clock       ; 0.000        ; 0.001      ; 1.136      ;
+; 0.870 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[14]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[0]   ; clock        ; clock       ; 0.000        ; 0.006      ; 1.142      ;
+; 0.871 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]          ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[3]          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.137      ;
+; 0.873 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[14]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[3]   ; clock        ; clock       ; 0.000        ; 0.006      ; 1.145      ;
+; 0.876 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[19] ; clock        ; clock       ; 0.000        ; -0.001     ; 1.141      ;
+; 0.878 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]          ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.144      ;
+; 0.882 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[10] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[10] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.148      ;
+; 1.003 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[29]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[19][29]    ; clock        ; clock       ; 0.000        ; -0.008     ; 1.261      ;
+; 1.006 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[13]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[0]   ; clock        ; clock       ; 0.000        ; 0.006      ; 1.278      ;
+; 1.007 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[13]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[1]   ; clock        ; clock       ; 0.000        ; 0.006      ; 1.279      ;
+; 1.007 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[13]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[3]   ; clock        ; clock       ; 0.000        ; 0.006      ; 1.279      ;
+; 1.082 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[6]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.348      ;
+; 1.087 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[20] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[20] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.353      ;
+; 1.089 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite       ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_regwrite       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.355      ;
+; 1.089 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[15] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[15] ; clock        ; clock       ; 0.000        ; -0.001     ; 1.354      ;
+; 1.093 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs2[0]            ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.359      ;
+; 1.096 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[1]  ; clock        ; clock       ; 0.000        ; 0.001      ; 1.363      ;
+; 1.096 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[31]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[12][31]    ; clock        ; clock       ; 0.000        ; 0.026      ; 1.388      ;
+; 1.105 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[28]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[22][28]    ; clock        ; clock       ; 0.000        ; -0.002     ; 1.369      ;
+; 1.106 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[28]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[18][28]    ; clock        ; clock       ; 0.000        ; -0.002     ; 1.370      ;
+; 1.106 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[22]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[2][22]     ; clock        ; clock       ; 0.000        ; -0.007     ; 1.365      ;
+; 1.107 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[22]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[6][22]     ; clock        ; clock       ; 0.000        ; -0.007     ; 1.366      ;
+; 1.110 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[18] ; clock        ; clock       ; 0.000        ; -0.001     ; 1.375      ;
+; 1.125 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[29]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[11][29]    ; clock        ; clock       ; 0.000        ; -0.007     ; 1.384      ;
+; 1.125 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[29]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[3][29]     ; clock        ; clock       ; 0.000        ; -0.007     ; 1.384      ;
+; 1.126 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[7]   ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[28][7]     ; clock        ; clock       ; 0.000        ; -0.006     ; 1.386      ;
+; 1.126 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[7]   ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[30][7]     ; clock        ; clock       ; 0.000        ; -0.006     ; 1.386      ;
+; 1.129 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[28]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[16][28]    ; clock        ; clock       ; 0.000        ; -0.006     ; 1.389      ;
+; 1.129 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[28]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[20][28]    ; clock        ; clock       ; 0.000        ; -0.006     ; 1.389      ;
+; 1.162 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[5]   ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[26][5]     ; clock        ; clock       ; 0.000        ; -0.005     ; 1.423      ;
+; 1.166 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[17] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[17] ; clock        ; clock       ; 0.000        ; 0.003      ; 1.435      ;
+; 1.170 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[5]   ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[24][5]     ; clock        ; clock       ; 0.000        ; -0.005     ; 1.431      ;
+; 1.171 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[1]             ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]         ; clock        ; clock       ; 0.000        ; 0.008      ; 1.445      ;
+; 1.180 ; IFU_PIPELINE:ifu_module|if_pc[17]                                          ; IFU_PIPELINE:ifu_module|if_pc[18]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.446      ;
+; 1.185 ; IFU_PIPELINE:ifu_module|if_pc[30]                                          ; IFU_PIPELINE:ifu_module|if_pc[31]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.451      ;
+; 1.188 ; IFU_PIPELINE:ifu_module|if_pc[18]                                          ; IFU_PIPELINE:ifu_module|if_pc[19]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.454      ;
+; 1.188 ; IFU_PIPELINE:ifu_module|if_pc[10]                                          ; IFU_PIPELINE:ifu_module|if_pc[11]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.454      ;
+; 1.188 ; IFU_PIPELINE:ifu_module|if_pc[12]                                          ; IFU_PIPELINE:ifu_module|if_pc[13]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.454      ;
+; 1.189 ; IFU_PIPELINE:ifu_module|if_pc[3]                                           ; IFU_PIPELINE:ifu_module|if_pc[4]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; IFU_PIPELINE:ifu_module|if_pc[19]                                          ; IFU_PIPELINE:ifu_module|if_pc[20]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; IFU_PIPELINE:ifu_module|if_pc[5]                                           ; IFU_PIPELINE:ifu_module|if_pc[6]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
++-------+----------------------------------------------------------------------------+---------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[4]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[4]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[11]    ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clock      ; 0.907 ; 0.907 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clock      ; -0.677 ; -0.677 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; zero      ; clock      ; 25.179 ; 25.179 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; zero      ; clock      ; 10.053 ; 10.053 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -4.337 ; -1860.929     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.380 ; -1192.380             ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                                                                                                                                        ;
++--------+----------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                            ; To Node                                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.337 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.356      ;
+; -4.324 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.352      ;
+; -4.321 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.340      ;
+; -4.304 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.332      ;
+; -4.288 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.307      ;
+; -4.271 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.290      ;
+; -4.258 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.286      ;
+; -4.251 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.273      ;
+; -4.235 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.257      ;
+; -4.231 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.253      ;
+; -4.219 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.241      ;
+; -4.218 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.237      ;
+; -4.215 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.234      ;
+; -4.213 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.241      ;
+; -4.212 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.231      ;
+; -4.202 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.230      ;
+; -4.202 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.221      ;
+; -4.195 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.214      ;
+; -4.195 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.223      ;
+; -4.186 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.214      ;
+; -4.186 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.214      ;
+; -4.186 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.208      ;
+; -4.185 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.207      ;
+; -4.183 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.215      ;
+; -4.177 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.205      ;
+; -4.174 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.204      ;
+; -4.169 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.191      ;
+; -4.166 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.185      ;
+; -4.166 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.194      ;
+; -4.163 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.195      ;
+; -4.159 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.187      ;
+; -4.156 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.177      ;
+; -4.156 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ; clock        ; clock       ; 1.000        ; -0.004     ; 5.184      ;
+; -4.154 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.184      ;
+; -4.146 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.168      ;
+; -4.140 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.162      ;
+; -4.140 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.161      ;
+; -4.136 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ; clock        ; clock       ; 1.000        ; -0.004     ; 5.164      ;
+; -4.129 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.151      ;
+; -4.122 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.144      ;
+; -4.120 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.148      ;
+; -4.117 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.149      ;
+; -4.116 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.137      ;
+; -4.116 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.138      ;
+; -4.115 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[3]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.134      ;
+; -4.113 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.135      ;
+; -4.113 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.135      ;
+; -4.110 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.132      ;
+; -4.108 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.138      ;
+; -4.107 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.139      ;
+; -4.107 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.128      ;
+; -4.104 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.126      ;
+; -4.096 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.124      ;
+; -4.096 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.117      ;
+; -4.095 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.008     ; 5.119      ;
+; -4.093 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.115      ;
+; -4.090 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.111      ;
+; -4.090 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ; clock        ; clock       ; 1.000        ; -0.004     ; 5.118      ;
+; -4.087 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[3]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.106      ;
+; -4.087 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.119      ;
+; -4.085 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.104      ;
+; -4.076 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[3]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.104      ;
+; -4.076 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.098      ;
+; -4.075 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.103      ;
+; -4.075 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.008     ; 5.099      ;
+; -4.072 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.104      ;
+; -4.070 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[3]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.098      ;
+; -4.064 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.092      ;
+; -4.063 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.093      ;
+; -4.061 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.093      ;
+; -4.059 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[4]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; clock        ; clock       ; 1.000        ; -0.013     ; 5.078      ;
+; -4.057 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.079      ;
+; -4.057 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.085      ;
+; -4.054 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.086      ;
+; -4.052 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.082      ;
+; -4.050 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[0]  ; clock        ; clock       ; 1.000        ; -0.001     ; 5.081      ;
+; -4.050 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.071      ;
+; -4.048 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.076      ;
+; -4.048 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.080      ;
+; -4.046 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[2]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.016     ; 5.062      ;
+; -4.045 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.077      ;
+; -4.045 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ; clock        ; clock       ; 1.000        ; -0.004     ; 5.073      ;
+; -4.045 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.075      ;
+; -4.042 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[4]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.070      ;
+; -4.041 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[2]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.073      ;
+; -4.041 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ; clock        ; clock       ; 1.000        ; -0.010     ; 5.063      ;
+; -4.039 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.067      ;
+; -4.037 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.058      ;
+; -4.036 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; clock        ; clock       ; 1.000        ; 0.000      ; 5.068      ;
+; -4.036 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.066      ;
+; -4.035 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[1]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.063      ;
+; -4.034 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.055      ;
+; -4.034 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ; clock        ; clock       ; 1.000        ; -0.004     ; 5.062      ;
+; -4.034 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[0]  ; clock        ; clock       ; 1.000        ; -0.001     ; 5.065      ;
+; -4.031 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; clock        ; clock       ; 1.000        ; -0.011     ; 5.052      ;
+; -4.030 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ; clock        ; clock       ; 1.000        ; -0.016     ; 5.046      ;
+; -4.029 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ; clock        ; clock       ; 1.000        ; -0.004     ; 5.057      ;
+; -4.029 ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rs1[1]      ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; clock        ; clock       ; 1.000        ; -0.008     ; 5.053      ;
+; -4.027 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[4]     ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.057      ;
+; -4.027 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]    ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ; clock        ; clock       ; 1.000        ; -0.004     ; 5.055      ;
++--------+----------------------------------------------------------------------+----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                                                                                                                                             ;
++-------+----------------------------------------------------------------------------+---------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                  ; To Node                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------------+---------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; IFU_PIPELINE:ifu_module|if_pc[2]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.241 ; IFU_PIPELINE:ifu_module|if_pc[31]                                          ; IFU_PIPELINE:ifu_module|if_pc[31]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.393      ;
+; 0.281 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[8]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.433      ;
+; 0.282 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[25]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.434      ;
+; 0.282 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[14]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.434      ;
+; 0.282 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[11]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.434      ;
+; 0.283 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[12]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.435      ;
+; 0.286 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[30]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.438      ;
+; 0.288 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[16]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.440      ;
+; 0.288 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[19]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.440      ;
+; 0.289 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[9]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.441      ;
+; 0.290 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[18]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.442      ;
+; 0.291 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[7]   ; clock        ; clock       ; 0.000        ; 0.000      ; 0.443      ;
+; 0.291 ; IFU_PIPELINE:ifu_module|if_pc[2]                                           ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[10]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.443      ;
+; 0.318 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[11]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[4]            ; clock        ; clock       ; 0.000        ; 0.001      ; 0.471      ;
+; 0.319 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[7]    ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[0]            ; clock        ; clock       ; 0.000        ; 0.001      ; 0.472      ;
+; 0.322 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[9]    ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[2]            ; clock        ; clock       ; 0.000        ; 0.001      ; 0.475      ;
+; 0.330 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[7]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[7]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.482      ;
+; 0.334 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[13] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[13] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.486      ;
+; 0.335 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[5]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[5]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.487      ;
+; 0.337 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[8]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[8]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.489      ;
+; 0.338 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[23] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[23] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.490      ;
+; 0.340 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[0]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[0]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.492      ;
+; 0.340 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[24] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.492      ;
+; 0.340 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[31] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.492      ;
+; 0.340 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[22] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.492      ;
+; 0.340 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[4]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[4]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.492      ;
+; 0.348 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[29]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[27][29]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.500      ;
+; 0.357 ; IFU_PIPELINE:ifu_module|if_pc[17]                                          ; IFU_PIPELINE:ifu_module|if_pc[17]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; IFU_PIPELINE:ifu_module|if_pc[30]                                          ; IFU_PIPELINE:ifu_module|if_pc[30]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.510      ;
+; 0.361 ; IFU_PIPELINE:ifu_module|if_pc[5]                                           ; IFU_PIPELINE:ifu_module|if_pc[5]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; IFU_PIPELINE:ifu_module|if_pc[8]                                           ; IFU_PIPELINE:ifu_module|if_pc[8]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; IFU_PIPELINE:ifu_module|if_pc[18]                                          ; IFU_PIPELINE:ifu_module|if_pc[18]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; IFU_PIPELINE:ifu_module|if_pc[10]                                          ; IFU_PIPELINE:ifu_module|if_pc[10]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; IFU_PIPELINE:ifu_module|if_pc[12]                                          ; IFU_PIPELINE:ifu_module|if_pc[12]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; IFU_PIPELINE:ifu_module|if_pc[26]                                          ; IFU_PIPELINE:ifu_module|if_pc[26]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; IFU_PIPELINE:ifu_module|if_pc[3]                                           ; IFU_PIPELINE:ifu_module|if_pc[3]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; IFU_PIPELINE:ifu_module|if_pc[19]                                          ; IFU_PIPELINE:ifu_module|if_pc[19]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; IFU_PIPELINE:ifu_module|if_pc[21]                                          ; IFU_PIPELINE:ifu_module|if_pc[21]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; IFU_PIPELINE:ifu_module|if_pc[24]                                          ; IFU_PIPELINE:ifu_module|if_pc[24]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; IFU_PIPELINE:ifu_module|if_pc[28]                                          ; IFU_PIPELINE:ifu_module|if_pc[28]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.515      ;
+; 0.365 ; IFU_PIPELINE:ifu_module|if_pc[14]                                          ; IFU_PIPELINE:ifu_module|if_pc[14]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; IFU_PIPELINE:ifu_module|if_pc[15]                                          ; IFU_PIPELINE:ifu_module|if_pc[15]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; IFU_PIPELINE:ifu_module|if_pc[16]                                          ; IFU_PIPELINE:ifu_module|if_pc[16]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.517      ;
+; 0.371 ; IFU_PIPELINE:ifu_module|if_pc[4]                                           ; IFU_PIPELINE:ifu_module|if_pc[4]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; IFU_PIPELINE:ifu_module|if_pc[25]                                          ; IFU_PIPELINE:ifu_module|if_pc[25]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; IFU_PIPELINE:ifu_module|if_pc[27]                                          ; IFU_PIPELINE:ifu_module|if_pc[27]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; IFU_PIPELINE:ifu_module|if_pc[6]                                           ; IFU_PIPELINE:ifu_module|if_pc[6]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; IFU_PIPELINE:ifu_module|if_pc[7]                                           ; IFU_PIPELINE:ifu_module|if_pc[7]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; IFU_PIPELINE:ifu_module|if_pc[29]                                          ; IFU_PIPELINE:ifu_module|if_pc[29]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; IFU_PIPELINE:ifu_module|if_pc[20]                                          ; IFU_PIPELINE:ifu_module|if_pc[20]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; IFU_PIPELINE:ifu_module|if_pc[22]                                          ; IFU_PIPELINE:ifu_module|if_pc[22]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; IFU_PIPELINE:ifu_module|if_pc[23]                                          ; IFU_PIPELINE:ifu_module|if_pc[23]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.526      ;
+; 0.377 ; IFU_PIPELINE:ifu_module|if_pc[9]                                           ; IFU_PIPELINE:ifu_module|if_pc[9]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; IFU_PIPELINE:ifu_module|if_pc[11]                                          ; IFU_PIPELINE:ifu_module|if_pc[11]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; IFU_PIPELINE:ifu_module|if_pc[13]                                          ; IFU_PIPELINE:ifu_module|if_pc[13]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.530      ;
+; 0.392 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[14]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[3]   ; clock        ; clock       ; 0.000        ; 0.006      ; 0.550      ;
+; 0.392 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[14]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[0]   ; clock        ; clock       ; 0.000        ; 0.006      ; 0.550      ;
+; 0.400 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[10]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[3]            ; clock        ; clock       ; 0.000        ; 0.001      ; 0.553      ;
+; 0.411 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[9]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.563      ;
+; 0.415 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[21] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[21] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.567      ;
+; 0.420 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[30] ; clock        ; clock       ; 0.000        ; 0.002      ; 0.574      ;
+; 0.425 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]          ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[3]          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.577      ;
+; 0.426 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]          ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_rd[0]          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.578      ;
+; 0.427 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[19] ; clock        ; clock       ; 0.000        ; -0.001     ; 0.578      ;
+; 0.430 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[10] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[10] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.582      ;
+; 0.454 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[13]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[1]   ; clock        ; clock       ; 0.000        ; 0.006      ; 0.612      ;
+; 0.456 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[13]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[3]   ; clock        ; clock       ; 0.000        ; 0.006      ; 0.614      ;
+; 0.457 ; DATAPATH_PIPELINE:datapath_module|IF_ID_REG:if_id_reg|id_instruction[13]   ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[0]   ; clock        ; clock       ; 0.000        ; 0.006      ; 0.615      ;
+; 0.463 ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[29]  ; DATAPATH_PIPELINE:datapath_module|REG_FILE:reg_file|reg_memory[19][29]    ; clock        ; clock       ; 0.000        ; -0.006     ; 0.609      ;
+; 0.495 ; IFU_PIPELINE:ifu_module|if_pc[17]                                          ; IFU_PIPELINE:ifu_module|if_pc[18]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.647      ;
+; 0.496 ; IFU_PIPELINE:ifu_module|if_pc[30]                                          ; IFU_PIPELINE:ifu_module|if_pc[31]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.648      ;
+; 0.498 ; IFU_PIPELINE:ifu_module|if_pc[3]                                           ; IFU_PIPELINE:ifu_module|if_pc[4]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; IFU_PIPELINE:ifu_module|if_pc[18]                                          ; IFU_PIPELINE:ifu_module|if_pc[19]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; IFU_PIPELINE:ifu_module|if_pc[5]                                           ; IFU_PIPELINE:ifu_module|if_pc[6]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.500 ; IFU_PIPELINE:ifu_module|if_pc[26]                                          ; IFU_PIPELINE:ifu_module|if_pc[27]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.652      ;
+; 0.500 ; IFU_PIPELINE:ifu_module|if_pc[10]                                          ; IFU_PIPELINE:ifu_module|if_pc[11]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.652      ;
+; 0.500 ; IFU_PIPELINE:ifu_module|if_pc[12]                                          ; IFU_PIPELINE:ifu_module|if_pc[13]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.652      ;
+; 0.501 ; IFU_PIPELINE:ifu_module|if_pc[28]                                          ; IFU_PIPELINE:ifu_module|if_pc[29]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.653      ;
+; 0.501 ; IFU_PIPELINE:ifu_module|if_pc[19]                                          ; IFU_PIPELINE:ifu_module|if_pc[20]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.653      ;
+; 0.501 ; IFU_PIPELINE:ifu_module|if_pc[21]                                          ; IFU_PIPELINE:ifu_module|if_pc[22]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.653      ;
+; 0.503 ; IFU_PIPELINE:ifu_module|if_pc[14]                                          ; IFU_PIPELINE:ifu_module|if_pc[15]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.655      ;
+; 0.503 ; IFU_PIPELINE:ifu_module|if_pc[15]                                          ; IFU_PIPELINE:ifu_module|if_pc[16]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.655      ;
+; 0.511 ; IFU_PIPELINE:ifu_module|if_pc[4]                                           ; IFU_PIPELINE:ifu_module|if_pc[5]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; IFU_PIPELINE:ifu_module|if_pc[25]                                          ; IFU_PIPELINE:ifu_module|if_pc[26]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; IFU_PIPELINE:ifu_module|if_pc[27]                                          ; IFU_PIPELINE:ifu_module|if_pc[28]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; IFU_PIPELINE:ifu_module|if_pc[29]                                          ; IFU_PIPELINE:ifu_module|if_pc[30]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; IFU_PIPELINE:ifu_module|if_pc[7]                                           ; IFU_PIPELINE:ifu_module|if_pc[8]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; IFU_PIPELINE:ifu_module|if_pc[6]                                           ; IFU_PIPELINE:ifu_module|if_pc[7]                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.513 ; IFU_PIPELINE:ifu_module|if_pc[20]                                          ; IFU_PIPELINE:ifu_module|if_pc[21]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.665      ;
+; 0.514 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[6]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[6]  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; IFU_PIPELINE:ifu_module|if_pc[23]                                          ; IFU_PIPELINE:ifu_module|if_pc[24]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.666      ;
+; 0.514 ; IFU_PIPELINE:ifu_module|if_pc[22]                                          ; IFU_PIPELINE:ifu_module|if_pc[23]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.666      ;
+; 0.515 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[20] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[20] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.667      ;
+; 0.517 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite       ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_regwrite       ; clock        ; clock       ; 0.000        ; 0.000      ; 0.669      ;
+; 0.517 ; IFU_PIPELINE:ifu_module|if_pc[9]                                           ; IFU_PIPELINE:ifu_module|if_pc[10]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.669      ;
+; 0.517 ; IFU_PIPELINE:ifu_module|if_pc[11]                                          ; IFU_PIPELINE:ifu_module|if_pc[12]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.669      ;
+; 0.518 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[15] ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[15] ; clock        ; clock       ; 0.000        ; -0.001     ; 0.669      ;
+; 0.518 ; IFU_PIPELINE:ifu_module|if_pc[13]                                          ; IFU_PIPELINE:ifu_module|if_pc[14]                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.670      ;
+; 0.520 ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ; DATAPATH_PIPELINE:datapath_module|MEM_WB_REG:mem_wb_reg|wb_alu_result[1]  ; clock        ; clock       ; 0.000        ; 0.001      ; 0.673      ;
++-------+----------------------------------------------------------------------------+---------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[26] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[27] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[28] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[29] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[30] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[31] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_alu_result[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[3]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_rd[4]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|EX_MEM_REG:ex_mem_reg|mem_regwrite       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_alu_control[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[4]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_rd[4]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; DATAPATH_PIPELINE:datapath_module|ID_EX_REG:id_ex_reg|ex_read_data1[11]    ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clock      ; 0.228 ; 0.228 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clock      ; -0.108 ; -0.108 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; zero      ; clock      ; 11.215 ; 11.215 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; zero      ; clock      ; 5.293 ; 5.293 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -12.767   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clock           ; -12.767   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -5247.279 ; 0.0   ; 0.0      ; 0.0     ; -1192.38            ;
+;  clock           ; -5247.279 ; 0.000 ; N/A      ; N/A     ; -1192.380           ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; reset     ; clock      ; 0.907 ; 0.907 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; reset     ; clock      ; -0.108 ; -0.108 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; zero      ; clock      ; 25.179 ; 25.179 ; Rise       ; clock           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; zero      ; clock      ; 5.293 ; 5.293 ; Rise       ; clock           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 857127   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 857127   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 1191  ; 1191 ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 149   ; 149  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Dec 16 09:42:27 2025
+Info: Command: quartus_sta PROCESSOR_PIPELINE -c PROCESSOR_PIPELINE
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'PROCESSOR_PIPELINE.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.767
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -12.767     -5247.279 clock 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380     -1192.380 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.337
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.337     -1860.929 clock 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380     -1192.380 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4588 megabytes
+    Info: Processing ended: Tue Dec 16 09:42:27 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

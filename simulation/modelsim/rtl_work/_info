@@ -1,0 +1,278 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Quartus 2\Chuyen_de\Thi_CK\RISC_V_v2\simulation\modelsim
+vALU
+Ij__SVIBgRjOJKCF0c[m3B1
+Vl=NOlVXKXbBRJFaHBaG4e3
+Z1 dD:\Quartus 2\Chuyen_de\Thi_CK\RISC_V_v2\simulation\modelsim
+w1765851312
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/ALU.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/ALU.v
+L0 5
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work {+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2} -O0
+n@a@l@u
+!i10b 1
+!s100 ?IJ[hcE:=9R5T`C;lhGhk2
+!s85 0
+!s108 1765853051.091000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/ALU.v|
+!s101 -O0
+vCONTROL
+I<?3nF:1^<=J4>D9fR5MAJ3
+VS1?;OOLSLC?DhbAe3[JbB1
+R1
+w1765851590
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/CONTROL.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/CONTROL.v
+L0 5
+R2
+r1
+31
+R3
+R4
+n@c@o@n@t@r@o@l
+!i10b 1
+!s100 XnGJGOo`T>Kj[HRHLFmT]0
+!s85 0
+!s108 1765853051.168000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/CONTROL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/CONTROL.v|
+!s101 -O0
+vDATAPATH_PIPELINE
+I<Hn_FCbZC[m>VGI]_n1=Q1
+VZ:a]__RmOlHTS<f5gR_WO2
+R1
+w1765851182
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/DATAPATH_PIPELINE.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/DATAPATH_PIPELINE.v
+L0 8
+R2
+r1
+31
+R3
+R4
+n@d@a@t@a@p@a@t@h_@p@i@p@e@l@i@n@e
+!i10b 1
+!s100 4V4[E=B30`<eHdZ]<@b801
+!s85 0
+!s108 1765853050.771000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/DATAPATH_PIPELINE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/DATAPATH_PIPELINE.v|
+!s101 -O0
+vEX_MEM_REG
+IW4RbQFJBiGZ877L@o1C8W0
+VaZ9c5IYh@^A^MokbPeF]<1
+R1
+w1765851232
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/EX_MEM_REG.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/EX_MEM_REG.v
+L0 5
+R2
+r1
+31
+R3
+R4
+n@e@x_@m@e@m_@r@e@g
+!i10b 1
+!s100 aJ=_FJ=TIBDVI4if=JVPG1
+!s85 0
+!s108 1765853050.925000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/EX_MEM_REG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/EX_MEM_REG.v|
+!s101 -O0
+vFORWARDING_UNIT
+I>dfUaXL57W4nZ`=X`OHIT1
+VVW;40fmSnWKcdVh6>XobC1
+R1
+w1765851266
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/FORWARDING_UNIT.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/FORWARDING_UNIT.v
+L0 5
+R2
+r1
+31
+R3
+R4
+n@f@o@r@w@a@r@d@i@n@g_@u@n@i@t
+!i10b 1
+!s100 gb>hBVS;BAWM4gizAz<V_0
+!s85 0
+!s108 1765853051.006000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/FORWARDING_UNIT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/FORWARDING_UNIT.v|
+!s101 -O0
+vHAZARD_DETECTION
+ICRVHG_Nmg8e<A`iDPLcE@2
+Vl90F7JOgKVn_QK?nIFfRT0
+R1
+w1765851296
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/HAZARD_DETECTION.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/HAZARD_DETECTION.v
+L0 5
+R2
+r1
+31
+R3
+R4
+n@h@a@z@a@r@d_@d@e@t@e@c@t@i@o@n
+!i10b 1
+!s100 TDV8:E6a_QS=U>2lZXYd_3
+!s85 0
+!s108 1765853051.050000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/HAZARD_DETECTION.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/HAZARD_DETECTION.v|
+!s101 -O0
+vID_EX_REG
+I``P964:12DgkLIA;Y`fU92
+VO3Nzl7mKDNG]ZBZP_LSei0
+R1
+w1765851411
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/ID_EX_REG.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/ID_EX_REG.v
+L0 5
+R2
+r1
+31
+R3
+R4
+n@i@d_@e@x_@r@e@g
+!i10b 1
+!s100 l[O4jY@0UnhgLT;W]]S0N0
+!s85 0
+!s108 1765853050.885000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/ID_EX_REG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/ID_EX_REG.v|
+!s101 -O0
+vIF_ID_REG
+I:ajBKNkiHPZEJmDM:WZ`B1
+VP3:HXke`WC7mkDn_jiX@03
+R1
+w1765851421
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/IF_ID_REG.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/IF_ID_REG.v
+L0 5
+R2
+r1
+31
+R3
+R4
+n@i@f_@i@d_@r@e@g
+!i10b 1
+!s100 S08K4ODElSz39=N8@KVIP0
+!s85 0
+!s108 1765853050.816000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/IF_ID_REG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/IF_ID_REG.v|
+!s101 -O0
+vIFU_PIPELINE
+IB2h_i5GmB;^D335QQSWJB3
+Vn7QeGznPO8^b6M`l6:o<K0
+R1
+Z5 w1765851162
+Z6 8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/PROCESSOR_PIPELINE.v
+Z7 FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/PROCESSOR_PIPELINE.v
+L0 63
+R2
+r1
+31
+Z8 !s108 1765853050.722000
+Z9 !s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/PROCESSOR_PIPELINE.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/PROCESSOR_PIPELINE.v|
+R3
+R4
+n@i@f@u_@p@i@p@e@l@i@n@e
+!i10b 1
+!s100 9jKT:De=hGge9??O7eof73
+!s85 0
+!s101 -O0
+vINST_MEM
+IB:m@cFe2:jeCm_bDjR?o=3
+VS@P`_4>hoESzbH=@VAhdO2
+R1
+w1765851324
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/INST_MEM.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/INST_MEM.v
+L0 5
+R2
+r1
+31
+R3
+R4
+n@i@n@s@t_@m@e@m
+!i10b 1
+!s100 AJM]`d76`=Wh2<hkz;55V2
+!s85 0
+!s108 1765853051.130000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/INST_MEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/INST_MEM.v|
+!s101 -O0
+vMEM_WB_REG
+I6b2j;KHhiSJ6meVi:9j<V0
+VNISb4aFNSC^`M]mDFz<9Q2
+R1
+w1765851247
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/MEM_WB_REG.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/MEM_WB_REG.v
+L0 5
+R2
+r1
+31
+R3
+R4
+n@m@e@m_@w@b_@r@e@g
+!i10b 1
+!s100 eW<[TF1;Oac]^c[3m@Hi=2
+!s85 0
+!s108 1765853050.961000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/MEM_WB_REG.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/MEM_WB_REG.v|
+!s101 -O0
+vPROCESSOR_PIPELINE
+I_Q>`f[jN0m[M?R`5O_<3N3
+VIg_e<^Ql@I4oPZ3nQWje42
+R1
+R5
+R6
+R7
+L0 8
+R2
+r1
+31
+R8
+R9
+R10
+R3
+R4
+n@p@r@o@c@e@s@s@o@r_@p@i@p@e@l@i@n@e
+!i10b 1
+!s100 jzON61o`QbaFT2Y]E3@S21
+!s85 0
+!s101 -O0
+vREG_FILE
+!i10b 1
+!s100 V;`gY4iimKP?R]59L5BZ40
+IadJmKnUSn1DcZREbzeiXR2
+VeZYY5aWNL=?h>4O0OMeTA0
+R1
+w1765851622
+8D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/REG_FILE.v
+FD:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/REG_FILE.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1765853051.205000
+!s107 D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/REG_FILE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2|D:/Quartus 2/Chuyen_de/Thi_CK/RISC_V_v2/REG_FILE.v|
+!s101 -O0
+R3
+R4
+n@r@e@g_@f@i@l@e
